@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
     @Entity
-    @Table(name = "administrador")
+    @Table(name = "administradores")
     public class Administrador {
 
         @Id
@@ -16,8 +16,8 @@ import javax.persistence.Table;
         @Column(name = "id", nullable = false)
         private Integer id;
 
-        @Column(name = "name", nullable = false, length = 50)
-        private String name;
+        @Column(name = "nome", nullable = false, length = 50)
+        private String nome;
 
         @Column(name = "email", nullable = false, length = 50, unique = true)
         private String email;
@@ -27,10 +27,14 @@ import javax.persistence.Table;
 
         public Administrador(String nome, String email, String senha) {
             super();
-            this.id = id;
-            this.name = nome;
+            //this.id = id;
+            this.nome = nome;
             this.email = email;
             this.senha = senha;
+        }
+
+        public Administrador() {
+            super();
         }
 
         public Integer getId() {
@@ -42,11 +46,11 @@ import javax.persistence.Table;
         }
 
         public String getNome() {
-            return name;
+            return nome;
         }
 
         public void setNome(String nome) {
-            this.name = nome;
+            this.nome = nome;
         }
 
         public String getEmail() {

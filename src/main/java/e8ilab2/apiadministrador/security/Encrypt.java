@@ -1,9 +1,13 @@
 package e8ilab2.apiadministrador.security;
 
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+
 import java.security.Key;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
-
+@Component
+@Primary
 public class Encrypt {
     public static String encrypt(String original) throws Exception {
 
