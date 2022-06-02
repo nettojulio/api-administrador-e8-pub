@@ -20,8 +20,6 @@ public class AdministradorServiceImpl implements IAdministradorService{
         try {
             Administrador user = adminDao.findByEmail(dadosLogin.getEmail());
 
-            System.out.println(dadosLogin.getEmail());
-            System.out.println(dadosLogin.getEmail());
             if (user != null) {
 
                 String senhaLogin = Encrypt.encrypt(dadosLogin.getSenha());

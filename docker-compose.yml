@@ -1,7 +1,7 @@
 version: '3.9'
 services:
-  teste-api-administrador-e8:
-    container_name: teste-api-administrador-e8
+  api-administrador-e8:
+    container_name: api-administrador-e8
     image: nettojulio/api-administrador-e8
     environment:
       RDS_HOSTNAME: database-2.ccbiucioexib.us-east-1.rds.amazonaws.com
@@ -12,5 +12,21 @@ services:
       PRIVATE_KEY: 123456789 123456789 123456789 12
       SECRET_KEY: 123456789 123456789 123456789 12
     ports:
+      - "8080:8080"
+    restart: on-failure
+
+  api-pedidos-e8:
+    container_name: api-pedidos-e8
+    image: nettojulio/api-pedidos-e8
+    environment:
+      RDS_HOSTNAME: database-e8-desafio2.ccbiucioexib.us-east-1.rds.amazonaws.com
+      RDS_PORT: 5432
+      RDS_ORDER_DB_NAME: db_orders_api
+      RDS_USERNAME: postgres
+      RDS_PASSWORD: postgres
+      URL_ADMIN_AUTH_ORDER_API: "http://api-administrador-e8:8080/validar"
+    ports:
       - "8081:8081"
+    depends_on:
+      - api-administrador-e8
     restart: on-failure
