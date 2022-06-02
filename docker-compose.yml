@@ -4,9 +4,9 @@ services:
     container_name: teste-api-administrador-e8
     image: nettojulio/api-administrador-e8
     environment:
-      RDS_HOSTNAME: database-e8-desafio2.ccbiucioexib.us-east-1.rds.amazonaws.com
+      RDS_HOSTNAME: database-2.ccbiucioexib.us-east-1.rds.amazonaws.com
       RDS_PORT: 5432
-      RDS_DB_NAME: api_administrador_e8_ilab2
+      RDS_ADMIN_DB_NAME: api_administrador_e8_ilab2
       RDS_USERNAME: postgres
       RDS_PASSWORD: postgres
       PRIVATE_KEY: 123456789 123456789 123456789 12
