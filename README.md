@@ -2,7 +2,7 @@
 
 ## API para autenticação de administradores
 
-Uma aplicação em Java API para cadastro, autenticação e login de administradores (com os atributos: id, nome,
+Uma aplicação Java API para cadastro, autenticação e login de administradores (com os atributos: id, nome,
 email e senha), além de validar o token JWT para consumo das outras duas APIs de usuários e pedidos.
 
 Para ver o Front-end, clique aqui: 
