@@ -22,7 +22,9 @@ application.properties
 
 ## Instalação
 Rodar no terminal
-docker-compose up
+```http
+$ docker-compose up
+```
 
 ## Autores
 
