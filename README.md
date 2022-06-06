@@ -22,7 +22,7 @@ application.properties
 
 ## Instalação
 Rodar no terminal
-```http
+```
 $ docker-compose up
 ```
 
