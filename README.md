@@ -68,24 +68,9 @@ docker-compose up
 
 #### Dados Recebidos
 
-#### Sucesso (200) ou Erro(400) Bad Request
-
-| Chave   | Tipo       | Descrição                           |
-| :---------- | :--------- | :---------------------------------- |
-| `token` | `string` | token de acesso do usuario/entregador |
-
-
-#### Exemplo
-```http
-{
-	"token": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJJdGFsb19Db3N0YSwyLGl
-    0YWxvQGVtYWlsLmNvbSw3MTEyMzQ1Njc4OSIsImlzcyI6IkZvb2RMb3ZlcnMiLCJleHAi
-    OjE2NDg3ODA4Nzl9.0UW7jMU8_S9VvluB3tMDvwRHAbp6ZcMoCoyFRrO6Udk"
-}
-```
+#### (201) Created ou Erro(400) Bad Request
 
 ---
-
 
 
 ### Login (Autenticação)
@@ -111,7 +96,7 @@ docker-compose up
 
 #### Dados Recebidos
 
-#### Sucesso (200) ou Erro(400) Bad Request
+#### (200) OK ou Erro(400) Bad Request
 
 #### Exemplo
 ```http
@@ -134,4 +119,4 @@ docker-compose up
 
 #### Dados Recebidos
 
-#### Sucesso (200), Erro(401) Não Autorizado
+#### (204) No Content, Erro(401) Não Autorizado
