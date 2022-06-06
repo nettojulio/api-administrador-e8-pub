@@ -1,6 +1,6 @@
 # EQUIPE 8 - Bola 8 - Desafio Final iLab
 
-## API para autenticação de administradores
+## API de administradores
 
 Uma aplicação Java API para cadastro, autenticação e login de administradores (com os atributos: id, nome,
 email e senha), além de validar o token JWT para consumo das outras duas APIs de usuários e pedidos.
