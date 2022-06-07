@@ -21,6 +21,7 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+.vscode
 .DS_Store
 
 HELP.md
@@ -836,5 +837,6 @@ hs_err_pid*
 ### AndroidStudio Patch ###
 
 !/gradle/wrapper/gradle-wrapper.jar
+
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,linux,visualstudiocode,eclipse,intellij,intellij+all,jetbrains,jetbrains+all,maven,gradle,node,nohup,git,androidstudio
