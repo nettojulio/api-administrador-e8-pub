@@ -15,20 +15,19 @@ Link do Jira: https://grupo8ilab.atlassian.net/jira/software/projects/G8ILAB/boa
 
 ## Variáveis de Ambiente
 
-Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de ambiente no seu 
+Para rodar esse projeto separadamente, você vai precisar adicionar as seguintes variáveis de ambiente no seu 
 application.properties
 
-`DB_URL`
-
-`DB_USER`
-
-`DB_PASSWORD`
+`RDS_HOSTNAME`, `RDS_USERNAME`, `RDS_PASSWORD`, `RDS_PORT`, `RDS_ADMIN_DB_NAME`
 
 ## Instalação
-Rodar no terminal
+Ou, dentro do diretório raiz do projeto, rodar no terminal o seguinte comando:
+
 ```
 $ docker-compose up
 ```
+
+para rodar as três APIs conjuntamente, a partir das respectivas imagens no docker.
 
 ## Autores
 
