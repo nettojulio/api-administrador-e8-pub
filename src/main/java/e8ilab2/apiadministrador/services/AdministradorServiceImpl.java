@@ -11,10 +11,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Primary
-public class AdministradorServiceImpl implements IAdministradorService{
+public class AdministradorServiceImpl implements IAdministradorService {
 
     @Autowired
     private AdministradorDAO adminDao;
+
     @Override
     public Token gerarTokenAdministrador(Administrador dadosLogin) {
         try {

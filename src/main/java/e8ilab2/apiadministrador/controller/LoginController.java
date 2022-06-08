@@ -3,7 +3,6 @@ package e8ilab2.apiadministrador.controller;
 import e8ilab2.apiadministrador.model.Administrador;
 import e8ilab2.apiadministrador.security.Token;
 import e8ilab2.apiadministrador.services.AdministradorServiceImpl;
-import e8ilab2.apiadministrador.services.IAdministradorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;

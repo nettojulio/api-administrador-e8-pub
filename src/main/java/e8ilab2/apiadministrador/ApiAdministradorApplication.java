@@ -5,9 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class ApiAdministradorApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(ApiAdministradorApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(ApiAdministradorApplication.class, args);
+    }
 }
