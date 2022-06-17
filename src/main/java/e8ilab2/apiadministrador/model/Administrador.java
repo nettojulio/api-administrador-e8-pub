@@ -1,6 +1,7 @@
 package e8ilab2.apiadministrador.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 
 @Entity
 @Table(name = "administradores")
@@ -14,6 +15,7 @@ public class Administrador {
     @Column(name = "nome", nullable = false, length = 50)
     private String nome;
 
+    @Email
     @Column(name = "email", nullable = false, length = 50, unique = true)
     private String email;
 

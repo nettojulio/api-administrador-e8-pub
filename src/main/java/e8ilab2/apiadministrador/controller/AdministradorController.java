@@ -22,7 +22,7 @@ public class AdministradorController {
     }
 
     @PostMapping("/admin")
-    public ResponseEntity<?> cadastrarAdministrador(@RequestBody Administrador administrador) throws Exception {
+    public ResponseEntity<?> cadastrarAdministrador(@RequestBody Administrador administrador) {
         administrador.setSenha(encoder.encode(administrador.getSenha()));
         Administrador administradorNew = new Administrador(administrador.getNome(), administrador.getEmail(), administrador.getSenha());
         adminDao.save(administradorNew);
