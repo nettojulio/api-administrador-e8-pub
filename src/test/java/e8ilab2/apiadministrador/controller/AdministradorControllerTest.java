@@ -29,7 +29,7 @@ class AdministradorControllerTest {
             given()
                 .port(port)
                 .header("Content-type", "application/json")
-                .body(new Administrador("nome", "email", "senha"))
+                .body(new Administrador("nome", "email@email.com", "senha"))
                 .and()
             .when()
                 .post("/admin")
