@@ -1,0 +1,41 @@
+image: maven:3.8.6-openjdk-18-slim
+
+stages:
+  - build
+  - test
+  - push-docker
+  - deploy
+
+build:
+  stage: build
+  script:
+    - echo "Clean the code..."
+    - mvn clean
+    - echo "Compiling the code..."
+    - mvn package -Dmaven.test.skip
+    - echo "Compile complete."
+
+test:
+  stage: test
+  script:
+    - PRIVATE_KEY=$PRIVATE_KEY RDS_HOSTNAME=$RDS_HOSTNAME RDS_ADMIN_DB_NAME=$RDS_ADMIN_DB_NAME RDS_PASSWORD=$RDS_PASSWORD RDS_PORT=$RDS_PORT RDS_USERNAME=$RDS_USERNAME SECRET_KEY=$SECRET_KEY mvn test
+    - echo "Test OK!"
+
+push-image:
+  image: docker
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
+  stage: push-docker
+  dependencies:
+    - test
+  script:
+    - docker build -t nettojulio/api-administrador-e8:latest -f Dockerfile .
+    - docker push nettojulio/api-administrador-e8:latest
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying application..."
+    - echo "Application successfully deployed."
