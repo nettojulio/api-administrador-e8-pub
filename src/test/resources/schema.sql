@@ -1,3 +1,5 @@
+drop table if exists administradores;
+
 create table if not exists administradores (
     id  serial not null,
     email varchar(50) not null unique,
