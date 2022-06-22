@@ -2,6 +2,7 @@ package e8ilab2.apiadministrador.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "administradores")
@@ -12,13 +13,16 @@ public class Administrador {
     @Column(name = "id", nullable = false)
     private Integer id;
 
+    @NotBlank
     @Column(name = "nome", nullable = false, length = 50)
     private String nome;
 
     @Email
+    @NotBlank
     @Column(name = "email", nullable = false, length = 50, unique = true)
     private String email;
 
+    @NotBlank
     @Column(name = "senha", nullable = false, columnDefinition = "TEXT")
     private String senha;
 

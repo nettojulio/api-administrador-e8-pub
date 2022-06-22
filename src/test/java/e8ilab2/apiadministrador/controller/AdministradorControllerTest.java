@@ -26,27 +26,29 @@ class AdministradorControllerTest {
 
     @Test
     void should_create_adm() {
-            given()
-                .port(port)
-                .header("Content-type", "application/json")
-                .body(new Administrador("nome", "email@email.com", "senha"))
-                .and()
-            .when()
-                .post("/admin")
-            .then()
-                .statusCode(HttpStatus.CREATED.value());
-    }
-
-    @Test
-    void should_return_unauthorized_when_adm_is_not_registered() {
         given()
             .port(port)
             .header("Content-type", "application/json")
-            .body(new Administrador("notfound", "notfound@email.com", "senha"))
+            .body(new Administrador("nome", "email@email.com", "senha"))
             .and()
         .when()
-            .post("/login")
+            .post("/admin")
         .then()
-            .statusCode(HttpStatus.UNAUTHORIZED.value());
+            .statusCode(HttpStatus.CREATED.value());
+    }
+
+    @Test
+    void should_return_bad_request_when_incorrects_fields() {
+        given()
+            .port(port)
+            .header("Content-type", "application/json")
+            .body(new Administrador("", "email@email.com", "senha"))
+//            .body(new Administrador("nome", "", "senha"))
+//            .body(new Administrador("nome", "email@email.com", ""))
+            .and()
+        .when()
+            .post("/admin")
+        .then()
+            .statusCode(HttpStatus.BAD_REQUEST.value());
     }
 }
