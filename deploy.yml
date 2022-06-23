@@ -6,19 +6,19 @@
         dest: "/home/ubuntu/grupo08/"
 
     - name: "Apply secret-admin.yaml"
-      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8-deploy/secret-admin.yaml
+      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8-deploy/secret-admin.yaml -n grupo-08-dev
 
     - name: "Apply configmap-admin.yaml"
-      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8-deploy/configmap-admin.yaml
+      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8-deploy/configmap-admin.yaml -n grupo-08-dev
 
     - name: "Apply loadbalancer-admin.yaml"
-      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8-deploy/loadbalancer-admin.yaml
+      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8-deploy/loadbalancer-admin.yaml -n grupo-08-dev
 
     - name: "Apply clusterip-admin.yaml"
-      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8-deploy/clusterip-admin.yaml
+      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8-deploy/clusterip-admin.yaml -n grupo-08-dev
 
     - name: "Apply deployment-admin.yaml"
-      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8-deploy/deployment-admin.yaml
+      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8-deploy/deployment-admin.yaml -n grupo-08-dev
 
     - name: "Apply hpa-admin.yaml"
-      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8-deploy/hpa-admin.yaml
+      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8-deploy/hpa-admin.yaml -n grupo-08-dev
