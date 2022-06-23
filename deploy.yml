@@ -10,3 +10,15 @@
 
     - name: "Apply Changes"
       shell: /home/ubuntu/grupo08/api-administrador-e8/apply-admin.sh
+
+    - name: "Aplicar configmap"
+      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8/configmap-admin.yaml
+
+    - name: "Aplicar secret"
+      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8/secret-admin.yaml
+
+    - name: "Aplicar hpa"
+      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8/hpa-admin.yaml
+
+    - name: "Aplicar cluster ip"
+      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8/clusterip-admin.yaml
