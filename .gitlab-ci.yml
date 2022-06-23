@@ -35,7 +35,12 @@ push-image:
     - docker push nettojulio/api-administrador-e8:latest
 
 deploy:
+  when: manual
   stage: deploy
+  image: nettojulio/ubuntu-ansible:latest
   script:
-    - echo "Deploying application..."
-    - echo "Application successfully deployed."
+    - cat <<EOF > chave.pem
+      $CONTEUDO_CHAVE_PRIVADA
+      EOF
+    - chmod 400 chave.pem
+    - ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook deploy.yml -u ubuntu --private-key chave.pem

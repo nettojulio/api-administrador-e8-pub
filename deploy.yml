@@ -1,0 +1,9 @@
+- hosts: all
+  tasks:
+    - name: "Upload Files"
+      copy:
+        src: "deploy"
+        dest: "/home/ubuntu/grupo08/api-administrador-e8/"
+
+    - name: "Aplly Changes"
+      shell: /home/ubuntu/grupo08/api-administrador-e8/apply-admin.sh
