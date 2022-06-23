@@ -2,23 +2,32 @@
   tasks:
     - name: "Upload Files"
       copy:
-        src: "deploy"
+        src: "api-administrador-e8-deploy"
         dest: "/home/ubuntu/grupo08/"
 
-    - name: "CHMOD"
-      shell: chmod +x /home/ubuntu/grupo08/api-administrador-e8/apply-admin.sh
+    - name: "Apply chmod apply-admin.sh"
+      shell: chmod +x /home/ubuntu/grupo08/api-administrador-e8-deploy/apply-admin.sh
 
-    - name: "Apply Changes"
-      shell: /home/ubuntu/grupo08/api-administrador-e8/apply-admin.sh
+    - name: "Apply chmod delete-admin.sh"
+      shell: chmod +x /home/ubuntu/grupo08/api-administrador-e8-deploy/delete-admin.sh
 
-    - name: "Aplicar configmap"
-      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8/configmap-admin.yaml
+    - name: "Apply secret-admin.yaml"
+      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8-deploy/secret-admin.yaml
 
-    - name: "Aplicar secret"
-      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8/secret-admin.yaml
+    - name: "Apply configmap-admin.yaml"
+      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8-deploy/configmap-admin.yaml
 
-    - name: "Aplicar hpa"
-      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8/hpa-admin.yaml
+    - name: "Apply loadbalancer-admin.yaml"
+      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8-deploy/loadbalancer-admin.yaml
 
-    - name: "Aplicar cluster ip"
-      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8/clusterip-admin.yaml
+    - name: "Apply clusterip-admin.yaml"
+      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8-deploy/clusterip-admin.yaml
+
+    - name: "Apply deployment-admin.yaml"
+      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8-deploy/deployment-admin.yaml
+
+    - name: "Apply hpa-admin.yaml"
+      shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8-deploy/hpa-admin.yaml
+
+    - name: "Apply All Changes"
+      shell: /home/ubuntu/grupo08/api-administrador-e8-deploy/apply-admin.sh
