@@ -2,8 +2,11 @@
   tasks:
     - name: "Upload Files"
       copy:
-        src: "deploy"
+        src: "deploy/*"
         dest: "/home/ubuntu/grupo08/api-administrador-e8/"
 
-    - name: "Aplly Changes"
+    - name: "CHMOD"
+      shell: chmod +x /home/ubuntu/grupo08/api-administrador-e8/apply-admin.sh
+
+    - name: "Apply Changes"
       shell: /home/ubuntu/grupo08/api-administrador-e8/apply-admin.sh

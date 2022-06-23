@@ -38,8 +38,6 @@ deploy:
   stage: deploy
   image: nettojulio/ubuntu-ansible:latest
   script:
-    - cat <<EOF > chave.pem
-      $CONTEUDO_CHAVE_PRIVADA
-      EOF
+    - echo "$CONTEUDO_CHAVE_PRIVADA" | tr -d '\r' >> chave.pem
     - chmod 400 chave.pem
     - ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook deploy.yml -u ubuntu --private-key chave.pem

@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: api-administrador-e8
+  labels:
+    app: api-administrador-e8
+spec:
+  containers:
+    - name: api-administrador-e8
+      image: nettojulio/api-administrador-e8:latest
+      env:
+        - name: RDS_HOSTNAME
+          valueFrom:
+            configMapKeyRef:
+              name: config-map-api-administrador-e8
+              key: RDS_HOSTNAME
+        - name: RDS_PORT
+          value: "5432"
+        - name: RDS_ADMIN_DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: config-map-api-administrador-e8
+              key: RDS_ADMIN_DB_NAME
+        - name: RDS_USERNAME
+          valueFrom:
+            configMapKeyRef:
+              name: config-map-api-administrador-e8
+              key: RDS_USERNAME
+        - name: RDS_PASSWORD
+          valueFrom: 
+            secretKeyRef:
+              name: secret-api-administrador-e8
+              key: RDS_PASSWORD
+        - name: PRIVATE_KEY
+          valueFrom:
+            configMapKeyRef:
+              name: config-map-api-administrador-e8
+              key: PRIVATE_KEY
+        - name: SECRET_KEY
+          valueFrom:
+            configMapKeyRef:
+              name: config-map-api-administrador-e8
+              key: SECRET_KEY
+      ports:
+        - containerPort: 8080
