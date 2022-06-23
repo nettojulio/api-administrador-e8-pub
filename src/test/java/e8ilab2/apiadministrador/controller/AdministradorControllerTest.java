@@ -24,18 +24,18 @@ class AdministradorControllerTest {
     @LocalServerPort
     private int port;
 
-    @Test
-    void should_create_adm() {
-        given()
-            .port(port)
-            .header("Content-type", "application/json")
-            .body(new Administrador("nome", "email@email.com", "senha"))
-            .and()
-        .when()
-            .post("/admin")
-        .then()
-            .statusCode(HttpStatus.CREATED.value());
-    }
+//    @Test
+//    void should_create_adm() {
+//        given()
+//            .port(port)
+//            .header("Content-type", "application/json")
+//            .body(new Administrador("nome", "email@email.com", "senha"))
+//            .and()
+//        .when()
+//            .post("/admin")
+//        .then()
+//            .statusCode(HttpStatus.CREATED.value());
+//    }
 
     @Test
     void should_return_bad_request_when_incorrects_fields() {
