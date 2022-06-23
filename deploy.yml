@@ -5,12 +5,6 @@
         src: "api-administrador-e8-deploy"
         dest: "/home/ubuntu/grupo08/"
 
-    - name: "Apply chmod apply-admin.sh"
-      shell: chmod +x /home/ubuntu/grupo08/api-administrador-e8-deploy/apply-admin.sh
-
-    - name: "Apply chmod delete-admin.sh"
-      shell: chmod +x /home/ubuntu/grupo08/api-administrador-e8-deploy/delete-admin.sh
-
     - name: "Apply secret-admin.yaml"
       shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8-deploy/secret-admin.yaml
 
@@ -28,6 +22,3 @@
 
     - name: "Apply hpa-admin.yaml"
       shell: kubectl apply -f /home/ubuntu/grupo08/api-administrador-e8-deploy/hpa-admin.yaml
-
-    - name: "Apply All Changes"
-      shell: /home/ubuntu/grupo08/api-administrador-e8-deploy/apply-admin.sh
