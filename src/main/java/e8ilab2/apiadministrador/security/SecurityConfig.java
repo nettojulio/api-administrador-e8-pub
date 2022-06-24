@@ -27,6 +27,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .antMatchers(HttpMethod.POST, "/admin")
                 .permitAll()
+                .antMatchers(HttpMethod.GET, "/h2-console/**/**")
+                .permitAll()
+                .antMatchers(HttpMethod.GET, "/h2-console/login.do**")
+                .permitAll()
                 .anyRequest().authenticated().and().cors();
 
         httpSec.addFilterBefore(new Filters(), UsernamePasswordAuthenticationFilter.class);

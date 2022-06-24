@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 
 @RestController
 @CrossOrigin("*")
@@ -22,7 +24,11 @@ public class AdministradorController {
     }
 
     @PostMapping("/admin")
-    public ResponseEntity<?> cadastrarAdministrador(@RequestBody Administrador administrador) throws Exception {
+    public ResponseEntity<?> cadastrarAdministrador(@RequestBody @Valid Administrador administrador) {
+        if (administrador.getNome().length() == 0 || administrador.getSenha().length() == 0 || administrador.getEmail().length() == 0){
+            return ResponseEntity.status(400).body("Não foi possível cadastrar o administrador");
+        }
+
         administrador.setSenha(encoder.encode(administrador.getSenha()));
         Administrador administradorNew = new Administrador(administrador.getNome(), administrador.getEmail(), administrador.getSenha());
         adminDao.save(administradorNew);
@@ -31,12 +37,7 @@ public class AdministradorController {
             return ResponseEntity.status(201).body(administradorNew);
         }
 
-        return ResponseEntity.status(400).body("Não foi possível cadastrar o administrador");
+        return ResponseEntity.status(400).body("Não foi possível concluir o cadastro!");
 
-    }
-
-    @GetMapping("/validar")
-    public ResponseEntity<?> validaToken() {
-        return ResponseEntity.status(204).build();
     }
 }

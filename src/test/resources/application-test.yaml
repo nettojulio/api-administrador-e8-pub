@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: administrador-api
+  datasource:
+    url: jdbc:h2:mem:administradores
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: 'create-drop'
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  h2:
+    console:
+      enabled: true
