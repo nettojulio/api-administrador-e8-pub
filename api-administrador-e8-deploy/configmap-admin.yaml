@@ -6,5 +6,3 @@ data:
   RDS_HOSTNAME: "db-eq8-second.ccbiucioexib.us-east-1.rds.amazonaws.com"
   RDS_ADMIN_DB_NAME: api_administrador_e8_ilab2
   RDS_USERNAME: "foodlovers"
-  PRIVATE_KEY: "123456789 123456789 123456789 12"
-  SECRET_KEY: "123456789 123456789 123456789 12"

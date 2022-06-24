@@ -41,13 +41,13 @@ spec:
                   key: RDS_PASSWORD
             - name: PRIVATE_KEY
               valueFrom:
-                configMapKeyRef:
-                  name: config-map-api-administrador-e8
+                secretKeyRef:
+                  name: secret-api-administrador-e8
                   key: PRIVATE_KEY
             - name: SECRET_KEY
               valueFrom:
-                configMapKeyRef:
-                  name: config-map-api-administrador-e8
+                secretKeyRef:
+                  name: secret-api-administrador-e8
                   key: SECRET_KEY
           ports:
             - containerPort: 8080
