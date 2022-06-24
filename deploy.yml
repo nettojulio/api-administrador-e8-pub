@@ -1,0 +1,24 @@
+- hosts: all
+  tasks:
+    - name: "Upload Files"
+      copy:
+        src: "prod-api-administrador-e8-deploy"
+        dest: "/home/ubuntu/grupo08/"
+
+    - name: "Apply secret-admin.yaml"
+      shell: kubectl apply -f /home/ubuntu/grupo08/prod-api-administrador-e8-deploy/secret-admin.yaml -n grupo-08-prod
+
+    - name: "Apply configmap-admin.yaml"
+      shell: kubectl apply -f /home/ubuntu/grupo08/prod-api-administrador-e8-deploy/configmap-admin.yaml -n grupo-08-prod
+
+    - name: "Apply loadbalancer-admin.yaml"
+      shell: kubectl apply -f /home/ubuntu/grupo08/prod-api-administrador-e8-deploy/loadbalancer-admin.yaml -n grupo-08-prod
+
+    - name: "Apply clusterip-admin.yaml"
+      shell: kubectl apply -f /home/ubuntu/grupo08/prod-api-administrador-e8-deploy/clusterip-admin.yaml -n grupo-08-prod
+
+    - name: "Apply deployment-admin.yaml"
+      shell: kubectl apply -f /home/ubuntu/grupo08/prod-api-administrador-e8-deploy/deployment-admin.yaml -n grupo-08-prod
+
+    - name: "Apply hpa-admin.yaml"
+      shell: kubectl apply -f /home/ubuntu/grupo08/prod-api-administrador-e8-deploy/hpa-admin.yaml -n grupo-08-prod

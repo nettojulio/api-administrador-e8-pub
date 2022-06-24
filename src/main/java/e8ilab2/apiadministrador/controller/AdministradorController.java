@@ -26,7 +26,13 @@ public class AdministradorController {
         administrador.setSenha(encoder.encode(administrador.getSenha()));
         Administrador administradorNew = new Administrador(administrador.getNome(), administrador.getEmail(), administrador.getSenha());
         adminDao.save(administradorNew);
-        return ResponseEntity.status(201).build();
+
+        if (administradorNew != null) {
+            return ResponseEntity.status(201).body(administradorNew);
+        }
+
+        return ResponseEntity.status(400).body("Não foi possível cadastrar o administrador");
+
     }
 
     @GetMapping("/validar")

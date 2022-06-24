@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-map-api-administrador-e8
+data:
+  RDS_HOSTNAME: "db-e8-desafio2.ccbiucioexib.us-east-1.rds.amazonaws.com"
+  RDS_ADMIN_DB_NAME: api_administrador_e8_ilab2
+  RDS_USERNAME: "postgres"
