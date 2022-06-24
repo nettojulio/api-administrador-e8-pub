@@ -5,11 +5,13 @@
 Uma aplicação Java API para cadastro, autenticação e login de administradores (com os atributos: id, nome,
 email e senha), além de validar o token JWT para consumo das outras duas APIs de usuários e pedidos.
 
-Repositório do Front-end, clique aqui: https://github.com/equipe8-final-ilab/frontend-e8
+Repositório do Front-end, clique aqui: https://gitlab.com/e8-ilab/desafio-modulo-02/frontend-e8
 
-Repositório da API de usuários: https://github.com/equipe8-final-ilab/api-usuarios-e8
+Repositório da API de usuários: https://gitlab.com/e8-ilab/desafio-modulo-02/api-usuarios-e8
 
-Repositório da API de pedidos: https://github.com/equipe8-final-ilab/api-pedidos-e8
+Repositório da API de pedidos: https://gitlab.com/e8-ilab/desafio-modulo-02/api-pedidos-e8
+
+Repositório do SES SQS Consumer: https://gitlab.com/e8-ilab/desafio-modulo-02/ses-sqs-consumer
 
 Link do Jira: https://grupo8ilab.atlassian.net/jira/software/projects/G8ILAB/boards/2/roadmap 
 
